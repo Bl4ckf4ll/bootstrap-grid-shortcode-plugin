@@ -6,15 +6,15 @@ You can use the `.row`,`.container`,`.container-fluid` and all the `.col-xx-xx` 
 
 example:
 
-```
+``` php
 [bgs_container type="container-fluid"]
-[bgs_row styles="background-color: red; padding: 20px"]
-[bgs_column size="xs-6" styles="background-color: lightblue; color: white; padding: 20px"]
-[bgs_column_1 size="xs-6" styles="background-color:green; padding: 20px"]col[/bgs_column_1]
-[bgs_column_1 size="xs-6" styles="background-color:green;padding: 20px"]col[/bgs_column_1]
-[/bgs_column]
-[bgs_column size="xs-6" styles="background-color: lightblue; color: white; padding: 40px"] Content [/bgs_column]
-[/bgs_row]
+  [bgs_row styles="background-color: red; padding: 20px"]
+    [bgs_column size="xs-6" styles="background-color: lightblue; color: white; padding: 20px"]
+      [bgs_column_1 size="xs-6" styles="background-color:green; padding: 20px"]col[/bgs_column_1]
+      [bgs_column_1 size="xs-6" styles="background-color:green;padding: 20px"]col[/bgs_column_1]
+      [/bgs_column]
+    [bgs_column size="xs-6" styles="background-color: lightblue; color: white; padding: 40px"] Content [/bgs_column]
+  [/bgs_row]
 [/bgs_container]
 ```
 
@@ -41,4 +41,17 @@ This shortcode will accept 2 parameters `styles` and `el`. The `styles` paramete
 ## [bgs_column]
 
 This shortcode will accept 3 paramenters `styles`, `el` and `size`. The `styles` parameter will accept a string with the format of html inline css styling (<a href="http://www.w3schools.com/html/html_css.asp"> CSS Docs </a> for more information). And the `el` parameter will accept a tag name and will use it to display the content, examples: `div`, `p`, `span`, etc. The `size` parameter will accept the column sizes from the bootstrap grid system. Examples: `col-xs-12`, `col-md-4`, `col-lg-3`, etc. If you want to use multiple sizes, just add the classes to the string. Example: `col-xs-12 col-md-4`. (<a href="http://getbootstrap.com/css/#grid-options"> Bootstrap Docs </a> for more info)
+
+## [bgs_column_$level]
+
+This shortcode will be used to use neted columns.
+
+Examples:
+
+``` php
+[bgs_column size="xs-6" styles="background-color: lightblue; color: white; padding: 20px"]
+  [bgs_column_1 size="xs-6" styles="background-color:green; padding: 20px"]col[/bgs_column_1] # level 1 nested column  
+  [bgs_column_1 size="xs-6" styles="background-color:green; padding: 20px"]col[/bgs_column_1] # level 1 nested column
+[/bgs_column]
+```
 
